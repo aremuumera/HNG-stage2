@@ -1,0 +1,814 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body{
+  background-color: #FCFCFC;
+  color:#121212 ;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+a.active{
+  color: #355ADF;
+  /* border-bottom: 2px solid #355ADF; */
+  padding-bottom: 5px;
+  border: 0px 0px 0px 2px;
+  font-weight: 600;
+  border: none;
+}
+  
+a.active {
+  color: #355adf;
+  position: relative; /* Ensure relative positioning for absolute positioning of ::after */
+  font-weight: 600;
+}
+
+a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Adjust the position to sit below the text */
+  left: -5px;
+  width: 100%; /* Ensure it spans the entire width of the link */
+  height: 2px; /* Adjust the thickness of the line */
+  background-color: #355adf; /* Color of the line */
+  transform: scaleX(1.2); /* Scale the width of the line */
+  transform-origin: bottom left; /* Ensure scaling starts from the bottom left corner */
+}
+a.act{
+  color: rgb(22, 22, 22);
+}
+
+.navLinkItem {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navLinkItem::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #355ADF;
+  transition: all 0.3s ease;
+  border-radius: 9999px;
+}
+
+.navLinkItem:hover::after {
+  width: 100%;
+}
+
+
+
+/* MOBILE SEARCH INPUT */
+/* this is a recreation of twitter search in css */
+.form {
+  --input-text-color: #fff;
+  /* --input-bg-color: #283542; */
+  --focus-input-bg-color: transparent;
+  --text-color: #949faa;
+  --active-color: #355ADF;
+  --width-of-input: 200px;
+  --inline-padding-of-input: .5em;
+  --gap: 0.9rem;
+}
+/* form style */
+.form {
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  width: var(--width-of-input);
+  position: relative;
+  isolation: isolate;
+}
+/* a fancy bg for showing background and border when focus. */
+.fancy-bg {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  background: var(--input-bg-color);
+  border-radius: 16px;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+}
+/* label styling */
+.label {
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  padding-inline: var(--inline-padding-of-input);
+  display: flex;
+  align-items: center;
+  border:1px solid rgba(117, 113, 113, 0.50);
+  border-radius: 16px;
+}
+
+.search,.close-btn {
+  position: absolute;
+}
+/* styling search-icon */
+.search {
+  fill: black;
+  font-weight: bold;
+  left: var(--inline-padding-of-input);
+}
+/* svg -- size */
+svg {
+  width: 17px;
+  display: block;
+}
+.input {
+  color:black;
+  width: 100%;
+  margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
+  background: none;
+  border: none;
+  max-width: 300px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(18, 18, 18, 0.80);
+  font-size: 12px
+}
+
+/* input background change in focus */
+.input:focus ~ .fancy-bg {
+  border: 1px solid var(--active-color);
+  background: var(--focus-input-bg-color);
+}
+/* search icon color change in focus */
+.input:focus ~ .search {
+  fill: var(--active-color);
+}
+/* showing close button when typing */
+.input:valid ~ .close-btn {
+  opacity: 1;
+  visibility: visible;
+}
+/* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+  -webkit-transition-delay: 9999s;
+}
+
+
+
+
+
+
+/* menu button  */
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition-duration: .5s;
+  border: none;
+  
+}
+
+.bars {
+  width: 22px;
+  /* height: 2px; */
+  background-color: black;
+  /* border-radius: 2px; */
+  border: none;
+  
+}
+
+#bar2 {
+  transition-duration: .8s;
+  width: 22px;
+  height: 2px;
+}
+
+#bar1,#bar3 {
+  /* width: 100%; */
+  width: 22px;
+  height: 2px;
+
+
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: .5s;
+  transform: rotate(180deg);
+}
+
+
+
+/* media query for mobile nav */
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -50%;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  width: 50%;
+  transition: all 1s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  /* // display: none; */
+}
+menu.check-icon:checked + .icon-menu + .menuMedia {
+     right: 0;
+    /* // display: block; */
+  }
+
+  .product{
+    width: 100%!important;
+    max-width: 1200px!important;
+  }
+
+  
+  .hover-scale {
+    transition: transform .4s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.3); 
+  }
+
+
+  /* ////////////////////////////////////// */
+
+  .range-slider {
+    height: 3px;
+    position: relative;
+    background-color: #e1e9f6;
+    border-radius: 2px;
+  }
+  .range-selected {
+    height: 100%;
+     left: 30%; 
+     right: 30%; 
+    position: absolute;
+    border-radius: 5px;
+    background-color: #2268f3;
+  }
+
+  
+  .range-input {
+    position: relative;
+  }
+  
+  .range-input input {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: -4px;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+  }
+  
+  .range-input input::-webkit-slider-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 3px solid #2268f3;
+    background-color: #2268f3;
+    pointer-events: auto;
+    -webkit-appearance: none;
+  }
+
+
+
+
+  .list-discs{
+
+    list-style-type:disc !important;
+  }
+  /* ============ button styles=================================== */
+
+  .btn {
+    /* width: 6.5em;
+    height: 2.3em;
+    margin: 0.5em; */
+    background: #2268f3;
+    color: white;
+    border: none;
+    /* border-radius: 0.625em; */
+    /* font-size: 20px;
+    font-weight: bold; */
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   }
+   
+   .button:hover {
+    color: #2268f3;
+   }
+   
+   .button:after {
+    content: "";
+    background: #000;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+    border: 1px solid #355adf;
+    
+   }
+   
+   .button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+   }
+
+
+
+   /* progrees bar */
+
+   /* .step-wizard {
+    background-color: #21d4fd;
+    background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.step-wizard-list{
+    /* background: #fff;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1); */
+    color: #333;
+    list-style-type: none;
+    border-radius: 10px;
+    display: flex;
+    padding: 20px 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.step-wizard-item{
+    padding: 0 20px;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive:1;
+    flex-grow: 1;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 240px;
+    position: relative;
+}
+.wizardone.step-wizard-item + .step-wizard-item:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 19px;
+  background: #2268f3;
+  width: 100%;
+  height: 2px;
+  transform: translateX(-50%);
+  z-index: -10;
+}
+.step-wizard-item + .step-wizard-item:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 19px;
+    background: #75717180;
+    width: 100%;
+    height: 2px;
+    transform: translateX(-50%);
+    z-index: -10;
+}
+.progress-count{
+    height: 40px;
+    width:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 auto;
+    position: relative;
+    z-index:10;
+    color: transparent;
+}
+.progress-count:after{
+    content: "";
+    height: 40px;
+    width: 40px;
+    background: #2268f3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -10;
+}
+.progress-count:before{
+    content: "";
+    height: 10px;
+    width: 20px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%) rotate(-45deg);
+    transform-origin: center center;
+}
+.item2.progress-count:before{
+  content: "";
+  height: 10px;
+  width: 20px;
+  border-left: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%) rotate(-45deg);
+  transform-origin: center center;
+}
+.progress-label{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.current-item .progress-count:before,
+.current-item ~ .step-wizard-item .progress-count:before{
+    display: none;
+}
+.current-item ~ .step-wizard-item .progress-count:after{
+    height:40px;
+    width:40px;
+    background-color: #fff;
+    border: 2px solid #75717180;
+}
+.current-item ~ .step-wizard-item .progress-label{
+    opacity: 0.5;
+}
+.current-item .progress-count:after{
+    background: #fff;
+    border: 2px solid #2268f3;
+}
+/* .item2. */
+.item2.current-item .progress-count:after{
+  background: #2268f3;
+  border: 2px solid #2268f3;
+}
+.item3.current-item .progress-count:after{
+  background: #2268f3;
+  border: 2px solid #2268f3;
+}
+.current-item .progress-count{
+    color: #21d4fd;
+}
+
+
+
+
+/* ====================== CHECK OUT FORM ====================================== */
+
+.modal {
+  /* width: 100%;
+  height: fit-content; */
+  /* background: #FFFFFF;
+  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1); */
+  border-radius: 26px;
+  /* max-width: 450px; */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.payment--options {
+  /* width: calc(100% - 40px); */
+  /* display: grid;
+  grid-template-columns: 33% 34% 33%;
+  gap: 20px;
+  padding: 10px; */
+}
+
+.payment--options button {
+  height: 55px;
+  /* background: #F2F2F2; */
+  border-radius: 11px;
+  padding: 5px 10px 5px;
+  border: 1px solid #888888a8;
+  outline: none;
+  width: 150px;
+}
+
+.payment--options button p {
+  font-size: 12px;
+}
+
+.payment--options button:last-child svg {
+  height: 22px;
+}
+
+.separator {
+  width: calc(100% - 20px);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+  color: #8B8E98;
+  margin: 0 10px;
+}
+
+.separator > p {
+  word-break: keep-all;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 11px;
+  margin: auto;
+}
+
+.separator .line {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  background-color: #e8e8e8;
+  margin: auto;
+}
+
+.credit-card-info--form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.input_container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 15px;
+}
+
+.split input {
+  width: 100%;
+}
+
+.input_label {
+  font-size: 14px;
+  color: #75717180 ;
+  font-weight: 600;
+}
+
+.input_field {
+  width: 100%;
+  max-width: 500px;
+  height: 40px;
+  padding: 0 0 0 16px;
+  border-radius: 9px;
+  outline: none;
+  background-color: #F2F2F2;
+  border: 1px solid #e5e5e500;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
+
+.purchase--btn {
+  height: 55px;
+  background: #F2F2F2;
+  border-radius: 11px;
+  border: 0;
+  outline: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  /* background: linear-gradient(180deg, #363636 0%, #1B1B1B 50%, #000000 100%); */
+  box-shadow: 0px 0px 0px 0px #FFFFFF, 0px 0px 0px 0px #000000;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.purchase--btn:hover {
+  /* box-shadow: 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #0000003a; */
+  color:#fff ;
+}
+
+/* Reset input number styles */
+.input_field::-webkit-outer-spin-button,
+.input_field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input_field[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+/* ============= check box form============================================ */
+.checkbox-wrapper-46 input[type="checkbox"] {
+  display: none;
+  visibility: hidden;
+}
+
+.checkbox-wrapper-46 .cbx {
+  margin: auto;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.checkbox-wrapper-46 .cbx span {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper-46 .cbx span:first-child {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  transform: scale(1);
+  vertical-align: middle;
+  border: 1px solid #9098a9;
+  transition: all 0.2s ease;
+}
+.checkbox-wrapper-46 .cbx span:first-child svg {
+  position: absolute;
+  top: 6px;
+  left: 2px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper-46 .cbx span:first-child:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #506eec;
+  display: block;
+  transform: scale(0);
+  opacity: 1;
+  border-radius: 50%;
+}
+.checkbox-wrapper-46 .cbx span:last-child {
+  padding-left: 8px;
+}
+.checkbox-wrapper-46 .cbx:hover span:first-child {
+  border-color: #506eec;
+}
+
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
+  background: #506eec;
+  border-color: #506eec;
+  animation: wave-46 0.4s ease;
+}
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child svg {
+  stroke-dashoffset: 0;
+}
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child:before {
+  transform: scale(3.5);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+@keyframes wave-46 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+
+@media screen and (max-width: 1022px){
+  .step-wizard-item{
+    padding: 0 20px;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive:1;
+    flex-grow: 1;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 150px;
+    position: relative;
+}
+}
+
+@media screen and (max-width: 430px){
+  .step-wizard-item{
+    padding: 0 20px;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive:1;
+    flex-grow: 1;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 110px;
+    position: relative;
+}
+.payment--options button {
+  width: 110px;
+}
+.payment--options button p{
+  font-size: 8px;
+}
+}
+@media screen and (max-width: 365px){
+  .step-wizard-item{
+    padding: 0 20px;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive:1;
+    flex-grow: 1;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 120px;
+    position: relative;
+}
+.payment--options button {
+  width: 100px;
+}
+.payment--options button p{
+  font-size: 8px;
+}
+}
