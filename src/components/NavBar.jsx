@@ -15,9 +15,9 @@ const NavBar = () => {
 
   return (
     <div className='relative'>
-      <div className='xl:px-[100px] lg:px-[60px] px-[30px] md:px-[40px] flex items-center justify-between xl:gap-[200px] lg:gap-[100px] sm:pt-[20px] sm:pb-[20px] pb-[20px] pt-[15px]'>
-        <div className="logo">
-          <Link to='' className='flex items-center justify-center'>
+      <div className='xl:px-[100px]  lg:px-[60px] px-[30px] md:px-[40px] flex items-center justify-between xl:gap-[200px] lg:gap-[100px] sm:pt-[20px] sm:pb-[20px] pb-[20px] pt-[15px]'>
+        <div className="logo md:flex hidden">
+          <Link to='/' className='flex items-center justify-center'>
             <img src={heroImage} alt="" className='sm:w-[80px] sm:h-[80px] w-[40px]' />
             <p className='sm:text-[20px] text-[15px] font-bold'>timbu<span className="text-blue">cloud</span></p>
           </Link>
@@ -55,7 +55,7 @@ const NavBar = () => {
         </div>
 
         {/* Search container */}
-        <div className="">
+        {/* <div className="">
           <form className="form">
             <label htmlFor="search">
               <input className="input" type="text" required="" placeholder="what are you looking for?" id="search" />
@@ -69,11 +69,20 @@ const NavBar = () => {
               </div>
             </label>
           </form>
+        </div> */}
+
+        <div className="logo block md:hidden">
+          <Link to='/' className='flex items-center justify-center'>
+            <img src={heroImage} alt="" className='sm:w-[80px] sm:h-[80px] w-[40px]' />
+            <p className='sm:text-[28px] text-[24px] font-bold'>timbu<span className="text-blue">cloud</span></p>
+          </Link>
         </div>
 
         <div className="md:hidden flex items-center justify-center gap-[20px]">
-          <img src={VectorBag} alt="" className="w-[14px] h-[18px] cursor-pointer" />
-          <img src={Profile} alt="" className="w-[18px] h-[17.5px] cursor-pointer" />
+          <Link to='/cart1'>
+            <img src={VectorBag} alt="" className="w-[16px] h-[18px] cursor-pointer" />
+          </Link>
+          {/* <img src={Profile} alt="" className="w-[18px] h-[17.5px] cursor-pointer" /> */}
         </div>
       </div>
 
@@ -93,7 +102,7 @@ const NavBar = () => {
               <NavLink to='/productCatalog' className='text-[18px] font-[400] text-black hover:text-blue w-[65px]  navLinkItem'>Home</NavLink>
               <NavLink to='/' className='text-[18px] font-[400] text-black hover:text-blue w-[65px] navLinkItem'>Catalog</NavLink>
               <NavLink to='/about' className='text-[18px] font-[400] text-black hover:text-blue w-[65px]  navLinkItem'>About</NavLink>
-              <NavLink to='/contact' className='text-[18px] font-[400] text-black hover:text-blue  w-[65px]  navLinkItem'>Contact</NavLink>
+              <NavLink to='/contactus' className='text-[18px] font-[400] text-black hover:text-blue  w-[65px]  navLinkItem'>Contact</NavLink>
             {/* </ul> */}
           </nav>
         </div>

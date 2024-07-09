@@ -63,11 +63,11 @@ const ShoppingCarts = () => {
                 <div className="w-1/5">
                     <p className='font-bold text-[24px]'>$340.00</p>
                 </div>
-                <div className="">
-                <svg className='w-[40px] h-[40px]' xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
-                <path d="M11.667 35.5C10.7503 35.5 9.96588 35.1739 9.31366 34.5217C8.66144 33.8694 8.33477 33.0844 8.33366 32.1667V10.5H6.66699V7.16667H15.0003V5.5H25.0003V7.16667H33.3337V10.5H31.667V32.1667C31.667 33.0833 31.3409 33.8683 30.6887 34.5217C30.0364 35.175 29.2514 35.5011 28.3337 35.5H11.667ZM28.3337 10.5H11.667V32.1667H28.3337V10.5ZM15.0003 28.8333H18.3337V13.8333H15.0003V28.8333ZM21.667 28.8333H25.0003V13.8333H21.667V28.8333Z" fill="#F00A0A" fillOpacity="0.5"/>
-                </svg>
-                </div>
+                <Link className="">
+                    <svg className='w-[40px] h-[40px]' xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
+                    <path d="M11.667 35.5C10.7503 35.5 9.96588 35.1739 9.31366 34.5217C8.66144 33.8694 8.33477 33.0844 8.33366 32.1667V10.5H6.66699V7.16667H15.0003V5.5H25.0003V7.16667H33.3337V10.5H31.667V32.1667C31.667 33.0833 31.3409 33.8683 30.6887 34.5217C30.0364 35.175 29.2514 35.5011 28.3337 35.5H11.667ZM28.3337 10.5H11.667V32.1667H28.3337V10.5ZM15.0003 28.8333H18.3337V13.8333H15.0003V28.8333ZM21.667 28.8333H25.0003V13.8333H21.667V28.8333Z" fill="#F00A0A" fillOpacity="0.5"/>
+                    </svg>
+                </Link>
             
             </div>
         ))
@@ -87,7 +87,7 @@ const ShoppingCarts = () => {
                 <button
                 type="submit"
                 aria-label="Submit"
-                className="flex aspect-square h-full items-center justify-center rounded-tr-xl bg-[#75717180] text-white transition hover:bg-blue"
+                className="flex aspect-square h-full items-center justify-center rounded-tr-xl bg-blue text-white transition hover:bg-black"
                 >
                 <svg className='w-[40px] h-[40px] ' xmlns="http://www.w3.org/2000/svg" width="60" height="61" viewBox="0 0 60 61" fill="none">
                 <path d="M0 0.43457H46.6667C54.0305 0.43457 60 6.40411 60 13.7679V47.1012C60 54.465 54.0305 60.4346 46.6667 60.4346H0V0.43457Z" fill="" fillOpacity="0.5"/>
@@ -104,11 +104,13 @@ const ShoppingCarts = () => {
                 <p className=''>SubTotal</p>
                 <h2 className='font-bold text-32px'>$698.00</h2>
             </div>
+           <Link to='/cart1'>
            <div className="flex  items-center  justify-end">
             <button className=' text-right btn mt-[30px] hover:text-white button h-[80px] p-[8px] rounded-[16px]'>
                     Proceed to checkout
                 </button>
            </div>
+           </Link>
            </div>
         </div>
         </div>
@@ -139,11 +141,11 @@ const ShoppingCarts = () => {
             </div>
         </div>
 
-        <div className='absolute top-[80px] right-[30px]'>
+        <button className='absolute top-[80px] right-[30px]'>
             <svg className='w-[24px] h-[24px]' xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
             <path d="M11.667 35.5C10.7503 35.5 9.96588 35.1739 9.31366 34.5217C8.66144 33.8694 8.33477 33.0844 8.33366 32.1667V10.5H6.66699V7.16667H15.0003V5.5H25.0003V7.16667H33.3337V10.5H31.667V32.1667C31.667 33.0833 31.3409 33.8683 30.6887 34.5217C30.0364 35.175 29.2514 35.5011 28.3337 35.5H11.667ZM28.3337 10.5H11.667V32.1667H28.3337V10.5ZM15.0003 28.8333H18.3337V13.8333H15.0003V28.8333ZM21.667 28.8333H25.0003V13.8333H21.667V28.8333Z" fill="#F00A0A" fillOpacity="0.5"/>
             </svg>
-        </div>
+        </button>
 
         <div className="px-[30px] pt-[30px]">
             <div className="flex flex-col justify-center items-center">
@@ -192,6 +194,7 @@ const ShoppingCarts = () => {
                 <p className=''>SubTotal</p>
                 <h2 className='font-bold text-32px'>$698.00</h2>
             </div>
+            <h1 className='text-[18px] pt-[20px]'>Do you have a coupon?</h1>
             <div className="relative w-full max-w-[500px]  mt-6">
                 <input
                     type="email"
@@ -204,7 +207,7 @@ const ShoppingCarts = () => {
                     <button
                     type="submit"
                     aria-label="Submit"
-                    className="flex aspect-square h-full items-center justify-center rounded-tr-xl bg-[#75717180] text-white transition hover:bg-blue"
+                    className="flex aspect-square h-full items-center justify-center rounded-tr-xl bg-blue text-white transition hover:bg-black"
                     >
                     <svg className='w-[40px] h-[40px] ' xmlns="http://www.w3.org/2000/svg" width="60" height="61" viewBox="0 0 60 61" fill="none">
                     <path d="M0 0.43457H46.6667C54.0305 0.43457 60 6.40411 60 13.7679V47.1012C60 54.465 54.0305 60.4346 46.6667 60.4346H0V0.43457Z" fill="" fillOpacity="0.5"/>
@@ -213,11 +216,13 @@ const ShoppingCarts = () => {
                     </button>
                 </div>
             </div>
-            <div className="flex  items-center  justify-end">
-                <button className=' text-right btn mt-[30px] hover:text-[white] button h-[60px]  p-[12px] rounded-[10px]'>
-                        Proceed to checkout
-                </button>
-            </div>
+            <Link to='/cart1'>
+                <div className="flex  items-center  justify-end">
+                    <button className=' text-right btn mt-[30px] hover:text-[white] button h-[60px]  p-[12px] rounded-[10px]'>
+                            Proceed to checkout
+                    </button>
+                </div>
+            </Link>
             </div>
       </div>
     </div>

@@ -16,7 +16,7 @@ const Sidebar = ({ display }) => {
         <div className="">
           <div className="flex items-center lg:pr-[25px] sm:pr-[10px] justify-between lg:gap-[60px] sm:gap-[30px] border-b-[1px] border-b-blue pb-[10px] w-full">
             <h2 className="font-bold text-[24px]">Categories</h2>
-            <img src={VectorUp} alt="" className="w-[8px] h-[6px]" />
+            {/* <img src={VectorUp} alt="" className="w-[8px] h-[6px]" /> */}
           </div>
           <ul>
             {['Chairs', 'Sofas', 'Beds', 'Boards', 'Lamps', 'Textile', 'Decor'].map((category) => (
@@ -37,7 +37,7 @@ const Sidebar = ({ display }) => {
           <div className="pt-[50px]">
             <div className="flex items-center lg:pr-[25px] sm:pr-[10px] justify-between lg:gap-[60px] sm:gap-[30px] border-b-[1px] border-b-blue pb-[10px] w-full">
               <h2 className="font-bold text-[24px]">Filter By</h2>
-              <img src={VectorUp} alt="" className="w-[8px] h-[6px]" />
+              {/* <img src={VectorUp} alt="" className="w-[8px] h-[6px]" /> */}
             </div>
             <p className='text-[] py-[10px]'>PRICE</p>
             <DoubleScrollBars />
@@ -48,7 +48,7 @@ const Sidebar = ({ display }) => {
         <div className="pt-[50px]">
           <div className="flex items-center lg:pr-[25px] sm:pr-[10px] justify-between lg:gap-[60px] sm:gap-[30px] border-b-[1px] border-b-blue pb-[10px] w-full">
             <h2 className="font-bold text-[24px]">Materials</h2>
-            <img src={VectorUp} alt="" className="w-[8px] h-[6px]" />
+            {/* <img src={VectorUp} alt="" className="w-[8px] h-[6px]" /> */}
           </div>
           <ul>
             {['Wood', 'Leather', 'Metal', 'Plastic', 'Fibre'].map((material) => (
@@ -68,7 +68,7 @@ const Sidebar = ({ display }) => {
         <div className="pt-[50px]">
           <div className="flex items-center lg:pr-[25px] sm:pr-[10px] justify-between lg:gap-[60px] sm:gap-[30px] border-b-[1px] border-b-blue pb-[10px] w-full">
             <h2 className="font-bold text-[24px]">Brands</h2>
-            <img src={VectorUp} alt="" className="w-[8px] h-[6px]" />
+            {/* <img src={VectorUp} alt="" className="w-[8px] h-[6px]" /> */}
           </div>
           <ul>
             {['Cosmo', 'Selletti', 'Laforma'].map((brand) => (

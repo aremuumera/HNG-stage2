@@ -4,6 +4,7 @@ import data from '../db/data'
 import Google from '../assets/Google.png'
 import MasterCard from '../assets/Mastercard Logo.png'
 import Paypal from '../assets/PayPal.png'
+import { Link } from 'react-router-dom'
 
 
 const CheckOuts2 = () => {
@@ -185,12 +186,16 @@ const CheckOuts2 = () => {
                 </div>
                     
                    <div className="flex items-center justify-center gap-[30px]">
+                    <Link to='/cart1'>
                     <div className="relative">
-                        <button className="  h-[60px] w-[120px] bg-[#fff] text-[14px] hover:text-[#fff] rounded-[10px] text-blue border-[2px] hover:bg-blue border-blue">Continue</button>
+                        <button className="  h-[60px] w-[120px] bg-[#fff] text-[14px] hover:text-[#fff] rounded-[10px] text-blue border-[2px] hover:bg-blue border-blue">Cancel</button>
                     </div>
-                    <div className="relative">
-                        <button className="purchase--btn  btn button h-[60px] w-[120px] text-[14px] bg-blue">PLACE ORDER</button>
-                    </div>
+                    </Link>
+                    <Link to='/cart3'>
+                        <div className="relative">
+                            <button className="purchase--btn  btn button h-[60px] w-[120px] text-[14px] bg-blue">PLACE ORDER</button>
+                        </div>
+                    </Link>
                    </div>
                 </div>
             </div>
