@@ -119,7 +119,7 @@ const ShoppingCarts = () => {
                 <p className=''>SubTotal</p>
                 <h2 className='font-bold text-32px'>$698.00</h2>
             </div>
-           <Link to='/cart1'>
+           <Link to='/cart4'>
            <div className="flex  items-center  justify-end">
             <button className=' text-right btn mt-[30px] hover:text-white button h-[80px] p-[8px] rounded-[16px]'>
                     Proceed to checkout
@@ -231,7 +231,7 @@ const ShoppingCarts = () => {
                     </button>
                 </div>
             </div>
-            <Link to='/cart1'>
+            <Link to='/cart4'>
                 <div className="flex  items-center  justify-end">
                     <button className=' text-right btn mt-[30px] hover:text-[white] button h-[60px]  p-[12px] rounded-[10px]'>
                             Proceed to checkout

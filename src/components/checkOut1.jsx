@@ -4,6 +4,7 @@ import data from '../db/data'
 import Google from '../assets/Google.png'
 import MasterCard from '../assets/Mastercard Logo.png'
 import Paypal from '../assets/PayPal.png'
+import { Link } from 'react-router-dom'
 
 
 const CheckOuts1 = () => {
@@ -142,31 +143,31 @@ const CheckOuts1 = () => {
                 </div>
                 
                     <div className="credit-card-info--form">
-                        <p> Card Details</p>
+                        <p className='text-[18px] font-bold'> Card Details</p>
                         <div className="input_container">
-                            <label htmlFor="password_field" className="input_label">Card Number</label>
+                            <label htmlFor="password_field" className="input_label text-[#000]">Card Number</label>
                             <input id="password_field" className="input_field" type="number" name="input-name" title="Inpit title" placeholder="xxxx xxxx xxxx xxxx"/>
                         </div>
                         <div className="flex gap-[30px] items-end">
                             <div className="input_container">
-                                <label htmlFor="password_field" className="input_label">Card holder Name</label>
+                                <label htmlFor="password_field" className="input_label text-[#000]">Card holder Name</label>
                                 <input id="password_field" className="input_field" type="text" name="input-name" title="Inpit title" placeholder="First Name"/>
                             </div>
                             <div className="input_container">
-                            {/* <label htmlFor="password_field" className="input_label">Card holder Name</label> */}
+                            {/* <label htmlFor="password_field" className="input_label text-[#000]">Card holder Name</label> */}
                             <input id="password_field" className="input_field" type="text" name="input-name" title="Inpit title" placeholder="Last Name"/>
                         </div>
                     </div>
                     
                     <div className=" flex gap-[30px]">
                         <div className="input_container">
-                        {/* <label htmlFor="password_field" className="input_label">Expiry Date / CVV</label> */}
-                            <label htmlFor="password_field" className="input_label">Expiry Date</label>
+                        {/* <label htmlFor="password_field" className="input_label text-[#000]">Expiry Date / CVV</label> */}
+                            <label htmlFor="password_field" className="input_label text-[#000]">Expiry Date</label>
                             <input id="password_field" className="input_field" type="text" name="input-name" title="Expiry Date" placeholder="01/23"/>
                         </div>
 
                         <div className='input_container'>
-                            <label htmlFor="password_field" className="input_label">CVV</label>
+                            <label htmlFor="password_field" className="input_label text-[#000]">CVV</label>
                             <input id="password_field" className="input_field" type="number" name="123" title="CVV" placeholder="CVV"/>
                         </div>
                     </div>
@@ -193,9 +194,11 @@ const CheckOuts1 = () => {
                     </div>
                     </div>
                 </div>
-                   <div className="relative">
-                    <button className="purchase--btn  btn button h-[60px] w-[120px] text-[14px] bg-blue">Continue</button>
-                   </div>
+                   <Link to='/cart2'>
+                    <div className="relative">
+                        <button className="purchase--btn  btn button h-[60px] w-[120px] text-[14px] bg-blue">Continue</button>
+                    </div>
+                   </Link>
                 </form>
             </div>
             </div>

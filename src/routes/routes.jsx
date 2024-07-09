@@ -2,6 +2,7 @@ import Layout from "../Layouts/layout.jsx";
 import Checkout1 from "../Pages/Checkout1";
 import CheckOut2 from "../Pages/checkout2.jsx";
 import CheckOut3 from "../Pages/checkout3.jsx";
+import CheckOut4 from "../Pages/checkout4.jsx";
 import ProductDetail from "../Pages/ProductDetail";
 import ProductListingPage from "../Pages/ProductListingPage.jsx";
 import ShoppingCart from "../Pages/ShoppingCart.jsx";
@@ -47,6 +48,10 @@ const Routes = [
       {
         path: "/cart3", 
         element: <CheckOut3 />, 
+      },
+      {
+        path: "/cart4", 
+        element: <CheckOut4 />, 
       },
     ],
   },

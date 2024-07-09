@@ -421,6 +421,17 @@ menu.check-icon:checked + .icon-menu + .menuMedia {
   transform: translateX(-50%);
   z-index: -10;
 }
+.wizardone.step-wizard-item + .step-wizard-item:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 19px;
+  background: #2268f3;
+  width: 100%;
+  height: 2px;
+  transform: translateX(-50%);
+  z-index: -10;
+}
 .step-wizard-item + .step-wizard-item:after{
     content: "";
     position: absolute;
@@ -445,6 +456,20 @@ menu.check-icon:checked + .icon-menu + .menuMedia {
     z-index:10;
     color: transparent;
 }
+.item4{
+  height: 40px;
+    width:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 auto;
+    position: relative;
+    z-index:10;
+    color: transparent;
+
+}
 .progress-count:after{
     content: "";
     height: 40px;
@@ -468,6 +493,32 @@ menu.check-icon:checked + .icon-menu + .menuMedia {
     top: 50%;
     transform: translate(-50%, -60%) rotate(-45deg);
     transform-origin: center center;
+}
+.item4:after{
+  content: "";
+  height: 40px;
+  width: 40px;
+  /* background: #2268f3; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid #2268f3;
+  z-index: -10;
+
+}
+.item4:before{
+  content: "";
+  height: 10px;
+  width: 20px;
+  /* border-left: 3px solid #fff; */
+  /* border-bottom: 3px solid #fff; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%) rotate(-45deg);
+  transform-origin: center center;
 }
 .item2.progress-count:before{
   content: "";
@@ -503,6 +554,11 @@ menu.check-icon:checked + .icon-menu + .menuMedia {
     background: #fff;
     border: 2px solid #2268f3;
 }
+
+.current-item .item4:after{
+  background: #fff;
+  border: 2px solid #b6b6b6c7;
+}
 /* .item2. */
 .item2.current-item .progress-count:after{
   background: #2268f3;
@@ -534,7 +590,7 @@ menu.check-icon:checked + .icon-menu + .menuMedia {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
+  /* padding: 20px; */
   width: 100%;
   max-width: 600px;
 }
@@ -670,6 +726,16 @@ menu.check-icon:checked + .icon-menu + .menuMedia {
 
 .input_field[type=number] {
   -moz-appearance: textfield;
+}
+
+.inputForm {
+  border: 1.5px solid #ecedec;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  transition: 0.2s ease-in-out;
 }
 
 

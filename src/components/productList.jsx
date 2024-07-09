@@ -120,7 +120,7 @@ const ProductList = () => {
       <div className="flex gap-[5px] pb-[8px] sm:pb-[15px] text-[20px]">
         <AiFillStar className="text-[#FFBE1E] text-[20px]" /><AiFillStar className="text-[#FFBE1E] text-[20px]" /><AiFillStar className="text-[#FFBE1E] text-[20px]" /><AiFillStar className="text-[#FFBE1E] text-[20px]" /><TiStarOutline className='text-[#12121280]' />                  
       </div>
-      <span className='text-[18px] font-bold sm:pt-[25px] pt-[15px]'>$ {d.price}</span>
+      <span className='text-[18px] font-bold sm:pt-[25px] pt-[15px]'> {d.price}</span>
     </div>
   </Link>
 ))}

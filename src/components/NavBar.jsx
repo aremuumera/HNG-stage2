@@ -47,7 +47,7 @@ const NavBar = () => {
           <div className="flex lg:gap-10 md:gap-[8px]">
             <img src={VectorSearch} alt="" className="w-[21px] h-[21px] cursor-pointer hover-scale " />
             <img src={Profile} alt="" className="w-[20px] h-[21px] cursor-pointer hover-scale" />
-            <Link to='/'>  
+            <Link to='/shoppingCart'>  
                   <img src={VectorBag} alt="" className="w-[18px] h-[21px] cursor-pointer hover-scale" />
             </Link>
           </div>

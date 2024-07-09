@@ -51,12 +51,14 @@ const ProductDetails = () => {
     <div>
       <div className="xl:px-[120px] lg:px-[80px] -mt-[60px] sm:px-[40px] px-[20px]">
       
-      <div className="sm:hidden block pb-[40px]" onClick={toggleSidebar}>
+      <Link to='/'>
+      <div className=" block pb-[40px]" >
             <svg className='w-[40px] h-[40px]' xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                 <path d="M21 22L16 17L21 12" stroke="#121212" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M16 22L11 17L16 12" stroke="#121212" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
         </div>
+      </Link>
       <div className={`fixed top-0 left-0 h-full w-full transition-all duration-300 ease-in-out ${open ? 'bg-black bg-opacity-50' : 'opacity-0 pointer-events-none'}`} onClick={toggleSidebar}></div>
 
       <div className={`fixed top-0 left-0 h-full  overflow-y-scroll w-[70%] bg-white z-[10000000000000] transform transition-transform duration-300 ease-in-out ${open ? 'translate-x-0' : '-translate-x-full '}`}>
@@ -72,7 +74,7 @@ const ProductDetails = () => {
       
       
       
-      <div className="flex md:flex-row flex-col items-start justify-center gap-[50px] lg:pt-[50px]">
+      <div className="flex md:flex-row flex-col items-start justify-center gap-[50px] lg:pt-[10px]">
         <div className="w-full max-w-[560px] h-full pb-[30px] border-[1px] border-[#757171] rounded-[10px]">
           <div className=" flex justify-center  :pt-[100px] pt-[30px]">
               <img src={box5} className='w-full max-w-[500px] object-contain  h-[320px]' alt='' />
@@ -142,17 +144,17 @@ const ProductDetails = () => {
             </div>
 
             <div  className="flex items-center gap-[10px]"> 
-              <div  className=" w-12 h-12 p-2 rounded-lg border border-neutral-900/opacity-50 flex-col justify-center items-center gap-2 inline-flex">
+              <button  className=" w-12 h-12 p-2 rounded-lg border border-neutral-900/opacity-50 flex-col justify-center items-center gap-2 inline-flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                   <path d="M12.1 18.78L12 18.88L11.89 18.78C7.14 14.47 4 11.62 4 8.72998C4 6.72998 5.5 5.22998 7.5 5.22998C9.04 5.22998 10.54 6.22998 11.07 7.58998H12.93C13.46 6.22998 14.96 5.22998 16.5 5.22998C18.5 5.22998 20 6.72998 20 8.72998C20 11.62 16.86 14.47 12.1 18.78ZM16.5 3.22998C14.76 3.22998 13.09 4.03998 12 5.30998C10.91 4.03998 9.24 3.22998 7.5 3.22998C4.42 3.22998 2 5.63998 2 8.72998C2 12.5 5.4 15.59 10.55 20.26L12 21.58L13.45 20.26C18.6 15.59 22 12.5 22 8.72998C22 5.63998 19.58 3.22998 16.5 3.22998Z" fill="black"/>
                 </svg>
-              </div>
+              </button>
 
-              <div className=" w-12 h-12 p-2 rounded-lg border border-neutral-900/opacity-50 flex-col justify-center items-center gap-2 inline-flex">
+              <button className=" w-12 h-12 p-2 rounded-lg border border-neutral-900/opacity-50 flex-col justify-center items-center gap-2 inline-flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                   <path d="M18 22.23C17.1667 22.23 16.4583 21.9383 15.875 21.355C15.2917 20.7716 15 20.0633 15 19.23C15 19.1133 15.0083 18.9923 15.025 18.867C15.0417 18.7416 15.0667 18.6293 15.1 18.53L8.05 14.43C7.76667 14.68 7.45 14.876 7.1 15.018C6.75 15.16 6.38333 15.2306 6 15.23C5.16667 15.23 4.45833 14.9383 3.875 14.355C3.29167 13.7716 3 13.0633 3 12.23C3 11.3966 3.29167 10.6883 3.875 10.105C4.45833 9.52165 5.16667 9.22998 6 9.22998C6.38333 9.22998 6.75 9.30098 7.1 9.44298C7.45 9.58498 7.76667 9.78065 8.05 10.03L15.1 5.92998C15.0667 5.82998 15.0417 5.71765 15.025 5.59298C15.0083 5.46831 15 5.34731 15 5.22998C15 4.39665 15.2917 3.68831 15.875 3.10498C16.4583 2.52165 17.1667 2.22998 18 2.22998C18.8333 2.22998 19.5417 2.52165 20.125 3.10498C20.7083 3.68831 21 4.39665 21 5.22998C21 6.06331 20.7083 6.77165 20.125 7.35498C19.5417 7.93831 18.8333 8.22998 18 8.22998C17.6167 8.22998 17.25 8.15931 16.9 8.01798C16.55 7.87665 16.2333 7.68065 15.95 7.42998L8.9 11.53C8.93333 11.63 8.95833 11.7426 8.975 11.868C8.99167 11.9933 9 12.114 9 12.23C9 12.346 8.99167 12.467 8.975 12.593C8.95833 12.719 8.93333 12.8313 8.9 12.93L15.95 17.03C16.2333 16.78 16.55 16.5843 16.9 16.443C17.25 16.3016 17.6167 16.2306 18 16.23C18.8333 16.23 19.5417 16.5216 20.125 17.105C20.7083 17.6883 21 18.3966 21 19.23C21 20.0633 20.7083 20.7716 20.125 21.355C19.5417 21.9383 18.8333 22.23 18 22.23ZM18 6.22998C18.2833 6.22998 18.521 6.13431 18.713 5.94298C18.905 5.75165 19.0007 5.51398 19 5.22998C18.9993 4.94598 18.9033 4.70865 18.712 4.51798C18.5207 4.32731 18.2833 4.23131 18 4.22998C17.7167 4.22865 17.4793 4.32465 17.288 4.51798C17.0967 4.71131 17.0007 4.94865 17 5.22998C16.9993 5.51131 17.0953 5.74898 17.288 5.94298C17.4807 6.13698 17.718 6.23265 18 6.22998ZM6 13.23C6.28333 13.23 6.521 13.134 6.713 12.942C6.905 12.75 7.00067 12.5126 7 12.23C6.99933 11.9473 6.90333 11.71 6.712 11.518C6.52067 11.326 6.28333 11.23 6 11.23C5.71667 11.23 5.47933 11.326 5.288 11.518C5.09667 11.71 5.00067 11.9473 5 12.23C4.99933 12.5126 5.09533 12.7503 5.288 12.943C5.48067 13.1356 5.718 13.2313 6 13.23ZM18 20.23C18.2833 20.23 18.521 20.134 18.713 19.942C18.905 19.75 19.0007 19.5126 19 19.23C18.9993 18.9473 18.9033 18.71 18.712 18.518C18.5207 18.326 18.2833 18.23 18 18.23C17.7167 18.23 17.4793 18.326 17.288 18.518C17.0967 18.71 17.0007 18.9473 17 19.23C16.9993 19.5126 17.0953 19.7503 17.288 19.943C17.4807 20.1356 17.718 20.2313 18 20.23Z" fill="black"/>
                 </svg>
-              </div>
+              </button>
 
               <Link to='/shoppingCart' className="button btn items-center  w-44 h-12 p-2 bg-blue rounded-lg justify-center  gap-4 inline-flex">
                 <div className="">
