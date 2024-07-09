@@ -52,9 +52,9 @@ const NavBar = () => {
             </Link>
           </div>
         </div>
-
-
       </div>
+
+    
 
       {/* Mobile view */}
       <div className={`md:hidden flex items-center justify-around px-[20px] `}>

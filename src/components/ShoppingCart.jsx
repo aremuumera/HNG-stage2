@@ -113,19 +113,20 @@ const ShoppingCarts = () => {
         </div>
 
         <div className="flex  justify-between  py-[50px] ">
-           <p></p>
+           <div></div>
            <div className="">
-            <div className='flex items-center justify-between gap-[150px] py-[20px] border-y-[2px] border-[#121212] px-[10px]'>
-                <p className=''>SubTotal</p>
-                <h2 className='font-bold text-32px'>$698.00</h2>
-            </div>
-           <Link to='/cart4'>
-           <div className="flex  items-center  justify-end">
-            <button className=' text-right btn mt-[30px] hover:text-white button h-[80px] p-[8px] rounded-[16px]'>
-                    Proceed to checkout
-                </button>
-           </div>
-           </Link>
+                <div className='flex items-center justify-between gap-[150px] py-[20px] border-y-[2px] border-[#121212] px-[10px]'>
+                    <p className=''>SubTotal</p>
+                    <h2 className='font-bold text-32px'>$698.00</h2>
+                </div>
+
+                <Link to='/cart4'>
+                    <div className="flex  items-center  justify-end">
+                        <button className=' text-right btn mt-[30px] hover:text-white button h-[80px] p-[8px] rounded-[16px]'>
+                            Proceed to checkout
+                        </button>
+                    </div>
+                </Link>
            </div>
         </div>
         </div>

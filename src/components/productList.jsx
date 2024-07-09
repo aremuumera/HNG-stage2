@@ -9,7 +9,6 @@ import LeftDouble from '../assets/Group1.png'
 import RightDouble from '../assets/Group3.png'
 import VectorRight from '../assets/VectorRight.png'
 import Vectorleft from '../assets/Vectorleft.png'
-import { FaRegStar } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 import { AiFillStar } from 'react-icons/ai'
 import { TiStarOutline } from 'react-icons/ti'
@@ -103,27 +102,27 @@ const ProductList = () => {
       {/* all product */}
       <div className="pt-[30px] relative   grid lg:grid-cols-3 grid-cols-2 sm:gap-[40px] gap-[20px] ">
       {data.map((d, i) => (
-  <Link 
-    key={i}
-    to='/productPage'
-  >
-    <div className="w-full max-w-[330px] h-full p-[10px] border-[1px] border-[#EDEDEF] rounded-[15px]">
-      <div className="relative bg-bg1 max-w-[550px] sm:h-[260px] h-[180px] rounded-[16px] overflow-hidden">
-        <img 
-          src={d.imagePath} 
-          alt={d.title} 
-          className='w-full h-full rounded-[16px] transform transition-transform duration-100 ease-in-out hover:scale-105'
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 transition-opacity duration-300 ease-in-out rounded-[16px]"></div>
-      </div>
-      <h1 className='sm:text-[22px] text-[14px] text-[#121212CC] py-[6px]'>{d.title}</h1>
-      <div className="flex gap-[5px] pb-[8px] sm:pb-[15px] text-[20px]">
-        <AiFillStar className="text-[#FFBE1E] text-[20px]" /><AiFillStar className="text-[#FFBE1E] text-[20px]" /><AiFillStar className="text-[#FFBE1E] text-[20px]" /><AiFillStar className="text-[#FFBE1E] text-[20px]" /><TiStarOutline className='text-[#12121280]' />                  
-      </div>
-      <span className='text-[18px] font-bold sm:pt-[25px] pt-[15px]'> {d.price}</span>
-    </div>
-  </Link>
-))}
+            <Link 
+                key={i}
+                to='/productPage'
+            >
+                <div className="w-full max-w-[330px] h-full p-[10px] border-[1px] border-[#EDEDEF] rounded-[15px]">
+                    <div className="relative bg-bg1 max-w-[550px] sm:h-[260px] h-[180px] rounded-[16px] overflow-hidden">
+                        <img 
+                        src={d.imagePath} 
+                        alt={d.title} 
+                        className='w-full h-full rounded-[16px] transform transition-transform duration-100 ease-in-out hover:scale-105'
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 transition-opacity duration-300 ease-in-out rounded-[16px]"></div>
+                    </div>
+                    <h1 className='sm:text-[22px] text-[14px] text-[#121212CC] py-[6px]'>{d.title}</h1>
+                    <div className="flex gap-[5px] pb-[8px] sm:pb-[15px] text-[20px]">
+                        <AiFillStar className="text-[#FFBE1E] text-[20px]" /><AiFillStar className="text-[#FFBE1E] text-[20px]" /><AiFillStar className="text-[#FFBE1E] text-[20px]" /><AiFillStar className="text-[#FFBE1E] text-[20px]" /><TiStarOutline className='text-[#12121280]' />                  
+                    </div>
+                    <span className='text-[18px] font-bold sm:pt-[25px] pt-[15px]'> {d.price}</span>
+                </div>
+            </Link>
+            ))}
 
 
         </div>

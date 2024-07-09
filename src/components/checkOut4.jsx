@@ -1,13 +1,32 @@
 
-import React from 'react'
+// import React from 'react'
+import { useState } from 'react';
 import data from '../db/data'
-import Google from '../assets/Google.png'
-import MasterCard from '../assets/Mastercard Logo.png'
-import Paypal from '../assets/PayPal.png'
+// import Google from '../assets/Google.png'
+// import MasterCard from '../assets/Mastercard Logo.png'
+// import Paypal from '../assets/PayPal.png'
 import { Link } from 'react-router-dom'
 
 
 const CheckOuts4 = () => {
+
+    const [quantity, setQuantity] = useState(1);
+    const handleIncrement = () => {
+        setQuantity(quantity + 1);
+      
+      
+    };
+  
+    const handleDecrement = () => {
+      if (quantity > 0) {
+        setQuantity(quantity - 1);
+      }else if(quantity == 0){
+        setQuantity(quantity);
+      }
+      
+    };
+
+
   return (
     <div>
       <div className="lg:px-[50px] mb-[70px] flex  items-start justify-center gap-[30px] -mt-[80px]">
@@ -43,7 +62,7 @@ const CheckOuts4 = () => {
                 <div className="">
                   <div className="flex  items-center gap-[30px] pt-[30px] pb-[30px]">
                     {/* <p className='text-[18px]'>QTY</p> */}
-                    <button className="w-[50px] h-[50px]  bg-[#75717180] active:bg-[#355ADF] hover:bg-[#355ADF] rounded-lg flex-col justify-center items-center gap-2 inline-flex">
+                    <button onClick={handleDecrement} className="w-[50px] h-[50px]  bg-[#75717180] active:bg-[#355ADF] hover:bg-[#355ADF] rounded-lg flex-col justify-center items-center gap-2 inline-flex">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -57,8 +76,8 @@ const CheckOuts4 = () => {
                         />
                       </svg>
                     </button>
-                    <p className="font-bold"> 1 </p>
-                    <button className="w-12 h-12 p-2 bg-[#75717180]  hover:bg-[#355ADF] rounded-lg flex-col justify-center items-center gap-2 inline-flex">
+                    <p className="font-bold">{quantity} </p>
+                    <button onClick={handleIncrement} className="w-12 h-12 p-2 bg-[#75717180]  hover:bg-[#355ADF] rounded-lg flex-col justify-center items-center gap-2 inline-flex">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="25"
@@ -203,7 +222,7 @@ const CheckOuts4 = () => {
                         />
                       </div>
                       {/* <div className="flex gap-[30px] items-end"> */}
-                      <div className="input_container">
+                      <div className="input_container ">
                         <label
                           htmlFor="password_field"
                           className="input_label text-[#000]"
@@ -229,14 +248,14 @@ const CheckOuts4 = () => {
                         </label>
                         <input
                           id="password_field"
-                          className="input_field"
+                          className="input_field  "
                           type="text"
                           name="input-name"
                           title="Inpit title"
                           placeholder="Enter your email Address"
                         />
                       </div>
-                      <div className="flex gap-[30px] items-end">
+                      <div className="flex md:gap-[30px] gap-[8px] items-end">
                         <div className="input_container">
                           <label
                             htmlFor="password_field"
@@ -272,7 +291,7 @@ const CheckOuts4 = () => {
                         </div>
                       </div>
 
-                      <div className=" flex gap-[30px]">
+                      <div className=" flex sm:gap-[30px] gap-[8px]">
                         <div className="input_container ">
                           <label
                             htmlFor="password_field"
@@ -324,93 +343,30 @@ const CheckOuts4 = () => {
                         </div>
 
                         <div className="input_container">
-                          <label
-                            htmlFor="password_field"
-                            className="input_label text-[#000]"
-                          >
+                        <label htmlFor="delivery_method" className="input_label text-[#000]">
                             Method of Delivery
-                          </label>
-                          <div className="flex items-center h-[40px] pr-[10px] bg-bg1 p-[2px] rounded-[10px] ">
-                            <input
-                              type="number"
-                              id="password_field"
-                              className="input "
-                              placeholder="0812 345 6789"
-                            />
-                            <svg
-                              className="w-[10px] h-[8px] "
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="10"
-                              height="6"
-                              viewBox="0 0 10 6"
-                              fill="none"
+                        </label>
+                        <div className="flex items-center h-[40px] pr-[10px] bg-bg1 p-[2px] rounded-[10px] ">
+                            <select id="delivery_method" className="input bg-bg1 w-full h-full p-[2px] rounded-[10px]">
+                            <option value="door_delivery">Door Delivery</option>
+                            <option value="pickup_location">Pick up at a Location</option>
+                            </select>
+                            {/* <svg
+                            className="w-[10px] h-[8px] ml-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="10"
+                            height="6"
+                            viewBox="0 0 10 6"
+                            fill="none"
                             >
-                              <path d="M0 0.5L5 5.5L10 0.5H0Z" fill="black" />
-                            </svg>
-                          </div>
+                            <path d="M0 0.5L5 5.5L10 0.5H0Z" fill="black" />
+                            </svg> */}
+                        </div>
                         </div>
                       </div>
-
-                      <div className="flex flex-col  items-end justify-end">
-                            
-                            <div className='input_container w-full border-2 border-[#000] max-w-[250px] rounded-t-[10px]'>
-                                {/* <label htmlFor="password_field" className="input_label text-[#000]">Mode of Delivery</label> */}
-                                <input id="password_field" className="input_field" type="number" name="123" title="CVV" placeholder="Door Delivery"/>
-                            </div>
-
-                            <div className=' input_container border-t-2 rounded-b-[10px] border-2 border-[#000] w-[250px]'>
-                                {/* <label htmlFor="password_field" className="input_label text-[#000]">Mode of Delivery</label> */}
-                                <input id="password_field" className="input_field" type="number" name="123" title="CVV" placeholder="Pick up at a Location"/>
-                            </div>
-                      </div>
-                      
-                      <div className="pb-[40px]">
-                        <div className="checkbox-wrapper-46">
-                          <input
-                            type="checkbox"
-                            id="cbx-46"
-                            className="inp-cbx"
-                          />
-                          <label htmlFor="cbx-46" className="cbx">
-                            <span>
-                              <svg
-                                viewBox="0 0 12 10"
-                                height="10px"
-                                width="12px"
-                              >
-                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                              </svg>
-                            </span>
-                            <span className="text-[15px]">
-                              Use current shipping address
-                            </span>
-                          </label>
-                        </div>
-
-                        <div className="checkbox-wrapper-46 pt-[15px]">
-                          <input
-                            type="checkbox"
-                            id="cbx-47"
-                            className="inp-cbx"
-                          />
-                          <label htmlFor="cbx-47" className="cbx">
-                            <span>
-                              <svg
-                                viewBox="0 0 12 10"
-                                height="10px"
-                                width="12px"
-                              >
-                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                              </svg>
-                            </span>
-                            <span className="text-[15px]">
-                              Add a new address
-                            </span>
-                          </label>
-                        </div>
-                      </div>
+                     
                     </div>
-                    <div className="relative">
+                    <div className="relative pt-[20px]">
                       <Link to='/cart1'>
                         <button className="purchase--btn  btn button h-[60px] w-[120px] text-[14px] bg-blue">
                             Continue

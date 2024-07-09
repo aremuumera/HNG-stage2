@@ -1,13 +1,17 @@
 
-import React from 'react'
+// import React from 'react'
 import data from '../db/data'
-import Google from '../assets/Google.png'
+// import Google from '../assets/Google.png'
 import MasterCard from '../assets/Mastercard Logo.png'
-import Paypal from '../assets/PayPal.png'
+// import Paypal from '../assets/PayPal.png'
 import { Link } from 'react-router-dom'
 
 
 const CheckOuts2 = () => {
+
+
+
+    
   return (
     <div>
      <div className="lg:px-[50px] mb-[70px] flex  items-start justify-center gap-[30px] -mt-[80px]">
@@ -174,10 +178,6 @@ const CheckOuts2 = () => {
                     <div className=" flex justify-between w-full items-center ">
                         <h2 className=' text-[14px]'>VAT</h2>
                         <button className=''>$0.50</button>
-                    </div>
-                    <div className=" flex justify-between w-full items-center ">
-                        <h2 className=' text-[14px]'>City</h2>
-                        <button className=''>Enugu</button>
                     </div>
                     <div className=" flex justify-between w-full items-center ">
                         <h2 className='text-left font-bold text-[18px]'>Total</h2>
