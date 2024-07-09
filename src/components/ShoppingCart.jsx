@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import box1 from '../assets/box1.png'
 import data from '../db/data'
 
 
 const ShoppingCarts = () => {
+
+
+    const [quantity, setQuantity] = useState(1);
+  const handleIncrement = () => {
+      setQuantity(quantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }else if(quantity == 0){
+      setQuantity(quantity);
+    }
+    
+  };
   return (
     <div>
       <div className="xl:px-[100px] md:block hidden sm:px-[30px] px-[20px] -mt-[60px]">
@@ -46,13 +61,13 @@ const ShoppingCarts = () => {
                 <div className="w-1/5">
                     <div className="flex  items-center gap-[30px] pt-[30px] pb-[30px]">
                         {/* <p className='text-[18px]'>QTY</p> */}
-                        <button className='w-[50px] h-[50px]  bg-[#75717180] active:bg-[#355ADF] hover:bg-[#355ADF] rounded-lg flex-col justify-center items-center gap-2 inline-flex'>
+                        <button onClick={handleDecrement} className='w-[50px] h-[50px]  bg-[#75717180] active:bg-[#355ADF] hover:bg-[#355ADF] rounded-lg flex-col justify-center items-center gap-2 inline-flex'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M19 12.998H5V10.998H19V12.998Z" fill="#FCFCFC"/>
                         </svg>
                         </button>
-                        <p className='font-bold'> 1 </p>
-                        <button className='w-12 h-12 p-2 bg-[#75717180]  hover:bg-[#355ADF] rounded-lg flex-col justify-center items-center gap-2 inline-flex'>
+                        <p className='font-bold'> {quantity} </p>
+                        <button onClick={handleIncrement} className='w-12 h-12 p-2 bg-[#75717180]  hover:bg-[#355ADF] rounded-lg flex-col justify-center items-center gap-2 inline-flex'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                                 <path d="M18.1943 12.998H13.1943V17.998C13.1943 18.2633 13.089 18.5176 12.9014 18.7052C12.7139 18.8927 12.4596 18.998 12.1943 18.998C11.9291 18.998 11.6748 18.8927 11.4872 18.7052C11.2997 18.5176 11.1943 18.2633 11.1943 17.998V12.998H6.19434C5.92912 12.998 5.67477 12.8927 5.48723 12.7052C5.29969 12.5176 5.19434 12.2633 5.19434 11.998C5.19434 11.7328 5.29969 11.4785 5.48723 11.2909C5.67477 11.1034 5.92912 10.998 6.19434 10.998H11.1943V5.99805C11.1943 5.73283 11.2997 5.47848 11.4872 5.29094C11.6748 5.1034 11.9291 4.99805 12.1943 4.99805C12.4596 4.99805 12.7139 5.1034 12.9014 5.29094C13.089 5.47848 13.1943 5.73283 13.1943 5.99805V10.998H18.1943C18.4596 10.998 18.7139 11.1034 18.9014 11.2909C19.089 11.4785 19.1943 11.7328 19.1943 11.998C19.1943 12.2633 19.089 12.5176 18.9014 12.7052C18.7139 12.8927 18.4596 12.998 18.1943 12.998Z" fill="#EDEDEF"/>
                             </svg>
