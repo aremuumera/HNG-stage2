@@ -282,7 +282,7 @@ const CheckOuts1 = () => {
                           placeholder="xxxx xxxx xxxx xxxx"
                         />
                       </div>
-                      <div className="flex gap-[30px] items-end">
+                      <div className="flex lg:gap-[30px] gap-[8px] items-end">
                         <div className="input_container">
                           <label
                             htmlFor="password_field"
@@ -312,7 +312,7 @@ const CheckOuts1 = () => {
                         </div>
                       </div>
 
-                      <div className=" flex gap-[30px]">
+                      <div className=" flex lg:gap-[30px] gap-[8px]">
                         <div className="input_container">
                           {/* <label htmlFor="password_field" className="input_label text-[#000]">Expiry Date / CVV</label> */}
                           <label

@@ -130,7 +130,7 @@ const CheckOuts4 = () => {
                   <h2 className="font-bold text-32px">$0.50</h2>
                 </div>
                 <div className="flex items-center justify-between gap-[150px] py-[20px] border-y-[2px] border-[#121212] px-[10px]">
-                  <p className="">VAT</p>
+                  <p className="font-bold">Total</p>
                   <h2 className="font-bold text-32px">$800.00</h2>
                 </div>
               </div>
